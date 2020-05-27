@@ -7,6 +7,7 @@ import "./app.scss";
 import { fetchData } from "../actions/data";
 import Header from "./header";
 import Form from "./form";
+import Navigator from "./navigator";
 
 class App extends Component {
   componentDidMount() {
@@ -23,6 +24,8 @@ class App extends Component {
         <Header data={data} />
 
         <Form data={data} />
+
+        <Navigator />
       </div>
     );
   }

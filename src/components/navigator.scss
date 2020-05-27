@@ -1,0 +1,12 @@
+.navigator {
+  padding: var(--padding-md);
+  border-top: var(--border-thickness) solid var(--fade-dark-sm);
+
+  .next {
+    float: right;
+  }
+
+  .prev {
+    float: left;
+  }
+}
