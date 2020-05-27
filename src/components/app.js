@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import "stylecraft/dist/stylecraft.css";
 
 import "./app.scss";
 import { fetchData } from "../actions/data";
+import Header from "./header";
 
 class App extends Component {
   componentDidMount() {
@@ -13,7 +15,13 @@ class App extends Component {
   }
 
   render() {
-    return <div className="app">App</div>;
+    const { data } = this.props;
+
+    return (
+      <div className="app sc-font">
+        <Header data={data} />
+      </div>
+    );
   }
 }
 
