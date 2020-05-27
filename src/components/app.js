@@ -5,6 +5,7 @@ import "stylecraft/dist/stylecraft.css";
 
 import "./app.scss";
 import { fetchData } from "../actions/data";
+import { nextStep, prevStep, resetSteps } from "../actions/steps";
 import Header from "./header";
 import Form from "./form";
 import Navigator from "./navigator";
@@ -17,7 +18,7 @@ class App extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, step, nextStep, prevStep, resetSteps } = this.props;
 
     return (
       <div className="app sc-font">
@@ -25,7 +26,12 @@ class App extends Component {
 
         <Form data={data} />
 
-        <Navigator />
+        <Navigator
+          step={step}
+          nextStep={nextStep}
+          prevStep={prevStep}
+          resetSteps={resetSteps}
+        />
       </div>
     );
   }
@@ -33,12 +39,16 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   data: state.data,
+  step: state.step,
 });
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchData,
+      nextStep,
+      prevStep,
+      resetSteps,
     },
     dispatch
   );
