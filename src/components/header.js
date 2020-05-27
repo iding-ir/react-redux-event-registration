@@ -20,7 +20,11 @@ const Header = (props) => {
 
   const ven = Object.values(venue)
     .filter((value) => value)
-    .map((value) => <span className="bit">{value}</span>);
+    .map((value, index) => (
+      <span key={index} className="bit">
+        {value}
+      </span>
+    ));
 
   return (
     <div className="header">
