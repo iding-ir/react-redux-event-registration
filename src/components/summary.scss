@@ -16,4 +16,14 @@
       border-radius: var(--border-radius);
     }
   }
+
+  .controls {
+    padding: var(--padding-md);
+  }
+
+  .payment {
+    padding: var(--padding-md);
+    margin-top: var(--padding-md);
+    border-top: var(--border-thickness) solid var(--fade-dark-sm);
+  }
 }
