@@ -6,6 +6,7 @@ import "stylecraft/dist/stylecraft.css";
 import "./app.scss";
 import { fetchData } from "../actions/data";
 import Header from "./header";
+import Form from "./form";
 
 class App extends Component {
   componentDidMount() {
@@ -20,6 +21,8 @@ class App extends Component {
     return (
       <div className="app sc-font">
         <Header data={data} />
+
+        <Form data={data} />
       </div>
     );
   }
