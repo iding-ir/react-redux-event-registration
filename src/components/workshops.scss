@@ -1,0 +1,9 @@
+.workshops {
+  flex-grow: 10;
+  align-content: flex-start;
+  display: none;
+
+  &.show {
+    display: unset;
+  }
+}

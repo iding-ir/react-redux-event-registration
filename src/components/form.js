@@ -6,10 +6,6 @@ import * as classnames from "classnames";
 import "./form.scss";
 
 class Form extends Component {
-  onSubmit = (formValues) => {
-    console.log(formValues);
-  };
-
   render() {
     const { data, step } = this.props;
 
@@ -34,10 +30,7 @@ class Form extends Component {
 
     return (
       <div className={classes}>
-        <form
-          className="sc-form sc-row"
-          onSubmit={this.props.handleSubmit(this.onSubmit)}
-        >
+        <form className="sc-form sc-row">
           <div className="field sc-col-xs-12">
             <h4>Registration Types &amp; Fees:</h4>
 

@@ -10,6 +10,7 @@ import { nextStep } from "../actions/steps";
 import { addToCurrent } from "../actions/current";
 import Header from "./header";
 import Form from "./form";
+import Workshops from "./workshops";
 import Navigator from "./navigator";
 
 class App extends Component {
@@ -31,6 +32,8 @@ class App extends Component {
         <Header data={data} />
 
         <Form step={step} data={data} />
+
+        <Workshops step={step} data={data} />
 
         <Navigator
           form={form}

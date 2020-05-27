@@ -14,14 +14,15 @@ const Navigator = (props) => {
 
         nextStep();
 
-        const { type, firstName, lastName, email } = form.registration.values;
+        const { type, firstName, lastName, email } =
+          form.registration.values || {};
 
         addToCurrent({ type, firstName, lastName, email });
       };
 
       return (
         <div className="next sc-form-button sc-md">
-          <button type="button" onClick={() => onClick()} disabled={disabled}>
+          <button type="button" onClick={() => onClick()} disabled={false}>
             <i className="sc-icon-right"></i>
 
             <span>Next</span>
