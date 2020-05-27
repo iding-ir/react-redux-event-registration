@@ -10,6 +10,27 @@ class Form extends Component {
   };
 
   render() {
+    const { data } = this.props;
+
+    const { registration_types, event_currency } = data;
+
+    if (registration_types === undefined) {
+      return "";
+    }
+
+    let items = [];
+
+    registration_types.forEach((type) => {
+      items = [
+        ...items,
+        {
+          id: type.event_registration_type_id,
+          label: `${type.event_registration_type_title} (${type.event_registration_type_price} ${event_currency})`,
+          value: type.event_registration_type_price,
+        },
+      ];
+    });
+
     return (
       <form
         className="form sc-form sc-row"
@@ -19,21 +40,14 @@ class Form extends Component {
           <h4>Registration Types &amp; Fees:</h4>
 
           <div className="sc-form-group sc-grid-1">
-            <Field
-              name="type"
-              items={[
-                { id: "bs", label: "BS", value: "bs" },
-                { id: "ms", label: "MS", value: "ms" },
-              ]}
-              component={renderSelect}
-            />
+            <Field name="type" items={items} component={renderSelect} />
           </div>
         </div>
 
         <div className="field sc-col-xs-12 sc-col-sm-6">
           <Field
             name="firstName"
-            label="Enter first name"
+            label="First name"
             component={renderTextfield}
           />
         </div>
@@ -41,13 +55,13 @@ class Form extends Component {
         <div className="field sc-col-xs-12 sc-col-sm-6">
           <Field
             name="lastName"
-            label="Enter last name"
+            label="Last name"
             component={renderTextfield}
           />
         </div>
 
         <div className="field sc-col-xs-12">
-          <Field name="email" label="Enter email" component={renderTextfield} />
+          <Field name="email" label="Email" component={renderTextfield} />
         </div>
       </form>
     );
