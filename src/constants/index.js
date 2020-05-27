@@ -1,1 +1,1 @@
-export const PLACEHOLDER = "PLACEHOLDER";
+export const FETCH_DATA = "FETCH_DATA";

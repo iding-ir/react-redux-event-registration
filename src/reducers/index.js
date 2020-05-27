@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
+import dataReducer from "./data";
+
 const combinedReducers = combineReducers({
-  placeholder: "placeholder",
+  data: dataReducer,
 });
 
 export default combinedReducers;
