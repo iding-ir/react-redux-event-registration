@@ -11,6 +11,7 @@ import { addToCurrent, addToWorkshops } from "../actions/current";
 import Header from "./header";
 import Form from "./form";
 import Workshops from "./workshops";
+import Summary from "./summary";
 import Navigator from "./navigator";
 
 class App extends Component {
@@ -48,6 +49,8 @@ class App extends Component {
           current={current}
           addToWorkshops={addToWorkshops}
         />
+
+        <Summary step={step} data={data} current={current} />
 
         <Navigator
           form={form}

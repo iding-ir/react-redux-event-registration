@@ -32,7 +32,7 @@ class Form extends Component {
       <div className={classes}>
         <form className="sc-form sc-row">
           <div className="field sc-col-xs-12">
-            <h4>Registration Types &amp; Fees:</h4>
+            <h5>Registration Types &amp; Fees:</h5>
 
             <div className="sc-form-group sc-grid-1">
               <Field name="type" items={items} component={renderSelect} />
