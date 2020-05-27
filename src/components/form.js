@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { renderTextfield, renderSelect } from "stylecraft-redux-form";
+import * as classnames from "classnames";
 
 import "./form.scss";
 
@@ -10,13 +11,13 @@ class Form extends Component {
   };
 
   render() {
-    const { data } = this.props;
+    const { data, step } = this.props;
 
     const { registration_types, event_currency } = data;
 
-    if (registration_types === undefined) {
-      return "";
-    }
+    const classes = classnames("form", {
+      show: step === 1,
+    });
 
     let items = [];
 
@@ -32,38 +33,40 @@ class Form extends Component {
     });
 
     return (
-      <form
-        className="form sc-form sc-row"
-        onSubmit={this.props.handleSubmit(this.onSubmit)}
-      >
-        <div className="field sc-col-xs-12">
-          <h4>Registration Types &amp; Fees:</h4>
+      <div className={classes}>
+        <form
+          className="sc-form sc-row"
+          onSubmit={this.props.handleSubmit(this.onSubmit)}
+        >
+          <div className="field sc-col-xs-12">
+            <h4>Registration Types &amp; Fees:</h4>
 
-          <div className="sc-form-group sc-grid-1">
-            <Field name="type" items={items} component={renderSelect} />
+            <div className="sc-form-group sc-grid-1">
+              <Field name="type" items={items} component={renderSelect} />
+            </div>
           </div>
-        </div>
 
-        <div className="field sc-col-xs-12 sc-col-sm-6">
-          <Field
-            name="firstName"
-            label="First name"
-            component={renderTextfield}
-          />
-        </div>
+          <div className="field sc-col-xs-12 sc-col-sm-6">
+            <Field
+              name="firstName"
+              label="First name"
+              component={renderTextfield}
+            />
+          </div>
 
-        <div className="field sc-col-xs-12 sc-col-sm-6">
-          <Field
-            name="lastName"
-            label="Last name"
-            component={renderTextfield}
-          />
-        </div>
+          <div className="field sc-col-xs-12 sc-col-sm-6">
+            <Field
+              name="lastName"
+              label="Last name"
+              component={renderTextfield}
+            />
+          </div>
 
-        <div className="field sc-col-xs-12">
-          <Field name="email" label="Email" component={renderTextfield} />
-        </div>
-      </form>
+          <div className="field sc-col-xs-12">
+            <Field name="email" label="Email" component={renderTextfield} />
+          </div>
+        </form>
+      </div>
     );
   }
 }

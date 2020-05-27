@@ -18,15 +18,20 @@ class App extends Component {
   }
 
   render() {
-    const { data, step, nextStep, prevStep, resetSteps } = this.props;
+    const { data, form, step, nextStep, prevStep, resetSteps } = this.props;
+
+    if (!Object.keys(data).length) {
+      return "";
+    }
 
     return (
       <div className="app sc-font">
         <Header data={data} />
 
-        <Form data={data} />
+        <Form step={step} data={data} />
 
         <Navigator
+          form={form}
           step={step}
           nextStep={nextStep}
           prevStep={prevStep}
@@ -39,6 +44,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   data: state.data,
+  form: state.form,
   step: state.step,
 });
 

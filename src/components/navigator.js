@@ -3,14 +3,14 @@ import React from "react";
 import "./navigator.scss";
 
 const Navigator = (props) => {
-  const { step, nextStep, prevStep, resetSteps } = props;
+  const { form, step, nextStep, prevStep, resetSteps } = props;
 
   const renderReset = () => {
     if (step === 2 || step === 3) {
       return (
-        <div class="reset sc-form-button sc-md">
+        <div className="reset sc-form-button sc-md">
           <button type="button" onClick={resetSteps}>
-            <i class="sc-icon-cross"></i>
+            <i className="sc-icon-cross"></i>
 
             <span>Reset</span>
           </button>
@@ -22,9 +22,9 @@ const Navigator = (props) => {
   const renderPrev = () => {
     if (step === 2 || step === 3) {
       return (
-        <div class="prev sc-form-button sc-md">
+        <div className="prev sc-form-button sc-md">
           <button type="button" onClick={prevStep}>
-            <i class="sc-icon-right"></i>
+            <i className="sc-icon-left"></i>
 
             <span>Prev</span>
           </button>
@@ -35,10 +35,14 @@ const Navigator = (props) => {
 
   const renderNext = () => {
     if (step === 1 || step === 2) {
+      console.log(form.registration);
+
+      const disabled = !form.registration || form.registration.syncErrors;
+
       return (
-        <div class="next sc-form-button sc-md">
-          <button type="button" onClick={nextStep}>
-            <i class="sc-icon-right"></i>
+        <div className="next sc-form-button sc-md">
+          <button type="button" onClick={nextStep} disabled={disabled}>
+            <i className="sc-icon-right"></i>
 
             <span>Next</span>
           </button>
