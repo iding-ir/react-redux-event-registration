@@ -1,7 +1,7 @@
 .header {
   padding: var(--padding-md);
-  color: #ffffff;
-  background-color: var(--color-primary-light);
+  color: var(--color-dark);
+  border-bottom: var(--border-thickness) solid var(--color-primary-light);
 
   .title {
     font-size: 2rem;
