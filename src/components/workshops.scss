@@ -6,4 +6,56 @@
   &.show {
     display: unset;
   }
+
+  .current {
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-md);
+    margin: var(--padding-md);
+    border: var(--border-thickness) solid var(--fade-dark-sm);
+    border-radius: var(--border-radius);
+
+    .registration {
+      text-align: left;
+      flex-grow: 10;
+
+      .description {
+        font-weight: bold;
+      }
+    }
+
+    .amount {
+      text-align: right;
+      flex-grow: 10;
+
+      .description {
+        color: red;
+      }
+    }
+  }
+
+  .list {
+    margin: var(--padding-md);
+
+    .workshop {
+      padding: var(--padding-md);
+      border: var(--border-thickness) solid var(--fade-dark-sm);
+      border-radius: var(--border-radius);
+
+      .name {
+        color: var(--color-dark);
+      }
+
+      .controls {
+        text-align: right;
+
+        .add {
+          padding: var(--padding-sm) var(--padding-md);
+          margin-left: var(--padding-md);
+          border: var(--border-thickness) solid var(--color-primary-dark);
+          border-radius: var(--border-radius);
+        }
+      }
+    }
+  }
 }
