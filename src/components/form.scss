@@ -3,5 +3,16 @@
 
   .field {
     padding: var(--padding-sm);
+
+    .sc-error {
+      position: absolute;
+      top: 0;
+      left: var(--border-radius);
+      transform: translateY(-100%);
+      background-color: red;
+      color: #ffffff;
+      padding: 0 var(--padding-sm);
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
   }
 }
