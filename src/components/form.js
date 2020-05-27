@@ -27,7 +27,7 @@ class Form extends Component {
         {
           id: type.event_registration_type_id,
           label: `${type.event_registration_type_title} (${type.event_registration_type_price} ${event_currency})`,
-          value: type.event_registration_type_price,
+          value: type.event_registration_type_id,
         },
       ];
     });

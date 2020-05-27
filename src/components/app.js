@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import "stylecraft/dist/stylecraft.css";
+import { reset } from "redux-form";
 
 import "./app.scss";
 import { fetchData } from "../actions/data";
-import { nextStep, prevStep, resetSteps } from "../actions/steps";
+import { nextStep } from "../actions/steps";
+import { addToCurrent } from "../actions/current";
 import Header from "./header";
 import Form from "./form";
 import Navigator from "./navigator";
@@ -18,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    const { data, form, step, nextStep, prevStep, resetSteps } = this.props;
+    const { data, form, step, nextStep, addToCurrent, reset } = this.props;
 
     if (!Object.keys(data).length) {
       return "";
@@ -33,9 +35,9 @@ class App extends Component {
         <Navigator
           form={form}
           step={step}
+          reset={reset}
           nextStep={nextStep}
-          prevStep={prevStep}
-          resetSteps={resetSteps}
+          addToCurrent={addToCurrent}
         />
       </div>
     );
@@ -46,15 +48,16 @@ const mapStateToProps = (state) => ({
   data: state.data,
   form: state.form,
   step: state.step,
+  current: state.current,
 });
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchData,
+      reset,
       nextStep,
-      prevStep,
-      resetSteps,
+      addToCurrent,
     },
     dispatch
   );
