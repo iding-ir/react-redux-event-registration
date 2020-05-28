@@ -2,6 +2,7 @@
   flex-grow: 10;
   align-content: flex-start;
   display: none;
+  padding-right: var(--icon-md);
 
   &.show {
     display: unset;

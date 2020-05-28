@@ -54,7 +54,7 @@ const User = (props) => {
     <div className="user sc-row">
       {renderRemove()}
 
-      <div className="registration sc-col-xs-6">
+      <div className="registration sc-col-xs-8">
         <div>Registration details for</div>
 
         <div className="description">
@@ -62,7 +62,7 @@ const User = (props) => {
         </div>
       </div>
 
-      <div className="amount sc-col-xs-6">
+      <div className="amount sc-col-xs-4">
         <div>AMOUNT</div>
 
         <div className="description">
@@ -73,9 +73,9 @@ const User = (props) => {
       <div className="details sc-col-xs-12 sc-row">
         <div className="head sc-col-xs-12">Registration Information</div>
 
-        <div className="title sc-col-xs-6">{registrationTitle}</div>
+        <div className="title sc-col-xs-8">{registrationTitle}</div>
 
-        <div className="amount sc-col-xs-6">
+        <div className="amount sc-col-xs-4">
           {registrationAmount} {event_currency}
         </div>
       </div>

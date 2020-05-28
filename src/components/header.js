@@ -18,7 +18,7 @@ const Header = (props) => {
     venue,
   } = data;
 
-  const ven = Object.values(venue)
+  const address = Object.values(venue)
     .filter((value) => value)
     .map((value, index) => (
       <span key={index} className="bit">
@@ -30,13 +30,13 @@ const Header = (props) => {
     <div className="header">
       <div className="title">{event_long_name}</div>
 
-      <div className="info">
-        {ven}
+      <div className="info sc-row">
+        <div className="sc-col-xs-12 sc-col-sm-6">{address}</div>
 
-        <span className="bit">
+        <div className="sc-col-xs-12 sc-col-sm-6">
           {moment(event_start_date).format(event_date_format)} -{" "}
           {moment(event_end_date).format(event_date_format)}
-        </span>
+        </div>
       </div>
     </div>
   );

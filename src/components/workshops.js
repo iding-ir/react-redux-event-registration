@@ -36,10 +36,12 @@ const Workshop = (props) => {
           } = workshop;
 
           return (
-            <div className="workshop" key={event_workshop_id}>
-              <div className="name">{event_workshop_title}</div>
+            <div className="workshop sc-row" key={event_workshop_id}>
+              <div className="name sc-col-xs-12 sc-col-sm-8">
+                {event_workshop_title}
+              </div>
 
-              <div className="controls">
+              <div className="controls sc-col-xs-12 sc-col-sm-4">
                 ({currentWorkshops.length}) {event_workshop_price}{" "}
                 {event_currency}
                 <span className="add" onClick={() => addToWorkshops(workshop)}>
