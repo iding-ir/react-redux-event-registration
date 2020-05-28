@@ -1,7 +1,8 @@
-import { NEXT_STEP } from "../constants";
+import { SET_STEP } from "../constants";
 
-export const nextStep = () => {
+export const setStep = (step) => {
   return {
-    type: NEXT_STEP,
+    type: SET_STEP,
+    payload: step,
   };
 };

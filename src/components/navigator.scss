@@ -2,6 +2,11 @@
   padding: var(--padding-md);
   border-top: var(--border-thickness) solid var(--fade-dark-sm);
 
+  .cancel {
+    float: left;
+    margin-right: var(--padding-md);
+  }
+
   .next {
     float: right;
     margin-left: var(--padding-md);

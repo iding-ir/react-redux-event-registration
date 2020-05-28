@@ -3,9 +3,10 @@ import * as classnames from "classnames";
 
 import "./summary.scss";
 import User from "./user";
+import { setStep } from "../actions/steps";
 
 const Summary = (props) => {
-  const { data, step, users } = props;
+  const { data, step, users, setStep } = props;
 
   const { registration_types, event_currency } = data;
 
@@ -41,7 +42,7 @@ const Summary = (props) => {
         <form className="sc-form">
           <div className="sc-form-group sc-grid-2">
             <div className="sc-form-button sc-md">
-              <button type="button">
+              <button type="button" onClick={() => setStep(1)}>
                 <i className="sc-icon-zoom-in"></i>
 
                 <span>Button with icon</span>
@@ -49,7 +50,11 @@ const Summary = (props) => {
             </div>
 
             <div className="total">
-              {total} {event_currency}
+              <div>TOTAL</div>
+
+              <div className="amount">
+                {total} {event_currency}
+              </div>
             </div>
           </div>
         </form>

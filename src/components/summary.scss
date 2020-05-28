@@ -13,6 +13,14 @@
 
   .controls {
     padding: var(--padding-md);
+
+    .total {
+      text-align: right;
+
+      .amount {
+        color: red;
+      }
+    }
   }
 
   .payment {

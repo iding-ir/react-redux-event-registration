@@ -6,7 +6,7 @@ import { reset } from "redux-form";
 
 import "./app.scss";
 import { fetchData } from "../actions/data";
-import { nextStep } from "../actions/steps";
+import { setStep } from "../actions/steps";
 import { addToCurrent, addToWorkshops, clearCurrent } from "../actions/current";
 import { addUser, removeUser, clearUsers } from "../actions/users";
 import Header from "./header";
@@ -29,7 +29,7 @@ class App extends Component {
       step,
       current,
       users,
-      nextStep,
+      setStep,
       addToCurrent,
       addToWorkshops,
       clearCurrent,
@@ -56,17 +56,18 @@ class App extends Component {
           addToWorkshops={addToWorkshops}
         />
 
-        <Summary step={step} data={data} users={users} />
+        <Summary step={step} data={data} users={users} setStep={setStep} />
 
         <Navigator
           form={form}
           step={step}
           current={current}
           reset={reset}
-          nextStep={nextStep}
+          setStep={setStep}
           addToCurrent={addToCurrent}
           addUser={addUser}
           clearCurrent={clearCurrent}
+          clearUsers={clearUsers}
         />
       </div>
     );
@@ -86,7 +87,7 @@ const mapDispatchToProps = (dispatch) =>
     {
       fetchData,
       reset,
-      nextStep,
+      setStep,
       addToCurrent,
       addToWorkshops,
       clearCurrent,
