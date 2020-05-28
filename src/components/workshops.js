@@ -2,6 +2,7 @@ import React from "react";
 import * as classnames from "classnames";
 
 import "./workshops.scss";
+import User from "./user";
 
 const Workshop = (props) => {
   const { data, step, current, addToWorkshops } = props;
@@ -10,43 +11,17 @@ const Workshop = (props) => {
     return "";
   }
 
-  const { registration_types, workshops, event_currency } = data;
+  const { workshops, event_currency } = data;
 
-  const { type, firstName, lastName, workshops: currentWorkshops } = current;
+  const { workshops: currentWorkshops } = current;
 
   const classes = classnames("workshops", {
     show: step === 2,
   });
 
-  const registrationAmount = Object.values(registration_types).filter(
-    (value) => value.event_registration_type_id === parseInt(type)
-  )[0].event_registration_type_price;
-
-  const workshopsAmount = currentWorkshops.reduce((total, item) => {
-    return total + item.event_workshop_price;
-  }, 0);
-
-  const amount = registrationAmount + workshopsAmount;
-
   return (
     <div className={classes}>
-      <div className="current">
-        <div className="registration">
-          <div>Registration details for</div>
-
-          <div className="description">
-            {firstName} {lastName}
-          </div>
-        </div>
-
-        <div className="amount">
-          <div>AMOUNT</div>
-
-          <div className="description">
-            {amount} {event_currency}
-          </div>
-        </div>
-      </div>
+      <User data={data} current={current} />
 
       <div className="list">
         <h5>Workshops</h5>
