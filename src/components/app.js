@@ -54,9 +54,16 @@ class App extends Component {
           data={data}
           current={current}
           addToWorkshops={addToWorkshops}
+          removeUser={removeUser}
         />
 
-        <Summary step={step} data={data} users={users} setStep={setStep} />
+        <Summary
+          step={step}
+          data={data}
+          users={users}
+          setStep={setStep}
+          removeUser={removeUser}
+        />
 
         <Navigator
           form={form}

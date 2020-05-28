@@ -5,7 +5,7 @@ import "./workshops.scss";
 import User from "./user";
 
 const Workshop = (props) => {
-  const { data, step, current, addToWorkshops } = props;
+  const { data, step, current, addToWorkshops, removeUser } = props;
 
   if (!current.type) {
     return "";
@@ -22,7 +22,7 @@ const Workshop = (props) => {
   return (
     <div className={classes}>
       <div className="current">
-        <User data={data} current={current} />
+        <User data={data} current={current} removeUser={removeUser} />
       </div>
 
       <div className="list">

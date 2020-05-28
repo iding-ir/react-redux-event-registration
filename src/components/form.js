@@ -71,19 +71,19 @@ const validate = (formValues) => {
     errors.type = "Type cannot be empty.";
   }
 
-  if (!formValues.firstName) {
-    errors.firstName = "First name cannot be empty.";
-  }
+  // if (!formValues.firstName) {
+  //   errors.firstName = "First name cannot be empty.";
+  // }
 
-  if (!formValues.lastName) {
-    errors.lastName = "Last name cannot be empty.";
-  }
+  // if (!formValues.lastName) {
+  //   errors.lastName = "Last name cannot be empty.";
+  // }
 
-  if (!formValues.email) {
-    errors.email = "Email cannot be empty.";
-  } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
-    errors.email = "Invalid email format.";
-  }
+  // if (!formValues.email) {
+  //   errors.email = "Email cannot be empty.";
+  // } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
+  //   errors.email = "Invalid email format.";
+  // }
 
   return errors;
 };

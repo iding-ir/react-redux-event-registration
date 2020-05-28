@@ -8,7 +8,7 @@ import User from "./user";
 
 class Summary extends Component {
   render() {
-    const { data, step, users, setStep } = this.props;
+    const { data, step, users, setStep, removeUser } = this.props;
 
     const { registration_types, event_currency } = data;
 
@@ -36,7 +36,15 @@ class Summary extends Component {
 
             total += registrationAmount + workshopsAmount;
 
-            return <User key={index} data={data} current={user} />;
+            return (
+              <User
+                key={index}
+                data={data}
+                current={user}
+                removeUser={removeUser}
+                remove={true}
+              />
+            );
           })}
         </div>
 

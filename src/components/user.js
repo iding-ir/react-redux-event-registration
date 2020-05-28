@@ -3,11 +3,17 @@ import React from "react";
 import "./user.scss";
 
 const User = (props) => {
-  const { data, current } = props;
+  const { data, current, removeUser, remove } = props;
 
   const { registration_types, event_currency } = data;
 
-  const { type, firstName, lastName, workshops: currentWorkshops } = current;
+  const {
+    type,
+    firstName,
+    lastName,
+    email,
+    workshops: currentWorkshops,
+  } = current;
 
   const registration_type = Object.values(registration_types).filter(
     (value) => value.event_registration_type_id === parseInt(type)
@@ -24,15 +30,30 @@ const User = (props) => {
   const amount = registrationAmount + workshopsAmount;
 
   const renderAdditionalTitle = () => {
-    console.log(currentWorkshops);
-
     if (currentWorkshops.length > 0) {
       return <div className="head sc-col-xs-12">Additional Services</div>;
     }
   };
 
+  const renderRemove = () => {
+    if (remove) {
+      return (
+        <div
+          className="remove"
+          onClick={() => {
+            removeUser(email);
+          }}
+        >
+          -
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="user sc-row">
+      {renderRemove()}
+
       <div className="registration sc-col-xs-6">
         <div>Registration details for</div>
 

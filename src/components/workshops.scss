@@ -32,6 +32,12 @@
           margin-left: var(--padding-md);
           border: var(--border-thickness) solid var(--color-primary-dark);
           border-radius: var(--border-radius);
+          transition: var(--transition-sm);
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--color-light);
+          }
         }
       }
     }

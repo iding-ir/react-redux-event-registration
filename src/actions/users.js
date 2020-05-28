@@ -7,10 +7,10 @@ export const addUser = (user) => {
   };
 };
 
-export const removeUser = (id) => {
+export const removeUser = (email) => {
   return {
     type: REMOVE_USER,
-    payload: id,
+    payload: email,
   };
 };
 
