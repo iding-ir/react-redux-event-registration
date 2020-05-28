@@ -62,6 +62,7 @@ class App extends Component {
           form={form}
           step={step}
           current={current}
+          users={users}
           reset={reset}
           setStep={setStep}
           addToCurrent={addToCurrent}

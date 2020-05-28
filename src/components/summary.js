@@ -47,7 +47,7 @@ class Summary extends Component {
                 <button type="button" onClick={() => setStep(1)}>
                   <i className="sc-icon-zoom-in"></i>
 
-                  <span>Button with icon</span>
+                  <span>Add New Participant</span>
                 </button>
               </div>
 

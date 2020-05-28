@@ -7,6 +7,7 @@ const Navigator = (props) => {
     form,
     step,
     current,
+    users,
     reset,
     setStep,
     addToCurrent,
@@ -75,7 +76,23 @@ const Navigator = (props) => {
   };
 
   const renderCancel = () => {
-    if (step === 2) {
+    if (step === 1 && Object.keys(users).length > 0) {
+      const onClick = () => {
+        setStep(3);
+
+        clearCurrent();
+      };
+
+      return (
+        <div className="cancel sc-form-button sc-md">
+          <button type="button" onClick={() => onClick()}>
+            <i className="sc-icon-left"></i>
+
+            <span>Cancel</span>
+          </button>
+        </div>
+      );
+    } else if (step === 2) {
       const onClick = () => {
         setStep(1);
 

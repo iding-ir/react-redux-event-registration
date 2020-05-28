@@ -1,6 +1,4 @@
 .user {
-  display: flex;
-  flex-direction: row;
   padding: var(--padding-md);
   margin-bottom: var(--padding-md);
   border: var(--border-thickness) solid var(--fade-dark-sm);
@@ -8,7 +6,6 @@
 
   .registration {
     text-align: left;
-    flex-grow: 10;
 
     .description {
       font-weight: bold;
@@ -17,10 +14,19 @@
 
   .amount {
     text-align: right;
-    flex-grow: 10;
 
     .description {
       color: red;
+    }
+  }
+
+  .details {
+    .head {
+      font-weight: bold;
+      margin-top: var(--padding-md);
+      margin-bottom: var(--padding-sm);
+      padding-bottom: var(--padding-sm);
+      border-bottom: var(--border-thickness) solid var(--fade-dark-sm);
     }
   }
 }
