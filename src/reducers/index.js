@@ -5,6 +5,7 @@ import dataReducer from "./data";
 import stepsReducer from "./steps";
 import currentReducer from "./current";
 import usersReducer from "./users";
+import modalReducer from "./modal";
 
 const combinedReducers = combineReducers({
   data: dataReducer,
@@ -12,6 +13,7 @@ const combinedReducers = combineReducers({
   step: stepsReducer,
   current: currentReducer,
   users: usersReducer,
+  modal: modalReducer,
 });
 
 export default combinedReducers;

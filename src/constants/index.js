@@ -9,3 +9,6 @@ export const CLEAR_CURRENT = "CLEAR_CURRENT";
 export const ADD_USER = "ADD_USER";
 export const REMOVE_USER = "REMOVE_USER";
 export const CLEAR_USERS = "CLEAR_USERS";
+
+export const SHOW_MODAL = "SHOW_MODAL";
+export const HIDE_MODAL = "HIDE_MODAL";

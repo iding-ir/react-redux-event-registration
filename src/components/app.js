@@ -9,11 +9,13 @@ import { fetchData } from "../actions/data";
 import { setStep } from "../actions/steps";
 import { addToCurrent, addToWorkshops, clearCurrent } from "../actions/current";
 import { addUser, removeUser, clearUsers } from "../actions/users";
+import { showModal, hideModal } from "../actions/modal";
 import Header from "./header";
 import Form from "./form";
 import Workshops from "./workshops";
 import Summary from "./summary";
 import Navigator from "./navigator";
+import Modal from "./modal";
 
 class App extends Component {
   componentDidMount() {
@@ -29,6 +31,7 @@ class App extends Component {
       step,
       current,
       users,
+      modal,
       setStep,
       addToCurrent,
       addToWorkshops,
@@ -37,6 +40,8 @@ class App extends Component {
       addUser,
       removeUser,
       clearUsers,
+      showModal,
+      hideModal,
     } = this.props;
 
     if (!Object.keys(data).length) {
@@ -68,6 +73,7 @@ class App extends Component {
         <Navigator
           form={form}
           step={step}
+          data={data}
           current={current}
           users={users}
           reset={reset}
@@ -76,7 +82,10 @@ class App extends Component {
           addUser={addUser}
           clearCurrent={clearCurrent}
           clearUsers={clearUsers}
+          showModal={showModal}
         />
+
+        <Modal users={users} modal={modal} hideModal={hideModal} />
       </div>
     );
   }
@@ -88,6 +97,7 @@ const mapStateToProps = (state) => ({
   step: state.step,
   current: state.current,
   users: state.users,
+  modal: state.modal,
 });
 
 const mapDispatchToProps = (dispatch) =>
@@ -102,6 +112,8 @@ const mapDispatchToProps = (dispatch) =>
       addUser,
       removeUser,
       clearUsers,
+      showModal,
+      hideModal,
     },
     dispatch
   );

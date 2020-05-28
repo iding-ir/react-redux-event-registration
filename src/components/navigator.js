@@ -6,6 +6,7 @@ const Navigator = (props) => {
   const {
     form,
     step,
+    data,
     current,
     users,
     reset,
@@ -14,6 +15,7 @@ const Navigator = (props) => {
     clearCurrent,
     addUser,
     clearUsers,
+    showModal,
   } = props;
 
   const renderNext = () => {
@@ -28,7 +30,12 @@ const Navigator = (props) => {
         const { type, firstName, lastName, email } =
           form.registration.values || {};
 
-        addToCurrent({ type, firstName, lastName, email });
+        const price = data.registration_types.filter(
+          (registration_type) =>
+            registration_type.event_registration_type_id === parseInt(type)
+        )[0].event_registration_type_price;
+
+        addToCurrent({ type, firstName, lastName, email, price });
       };
 
       return (
@@ -61,7 +68,9 @@ const Navigator = (props) => {
     } else if (step === 3) {
       const disabled = !form.payment || form.payment.syncErrors;
 
-      const onClick = () => {};
+      const onClick = () => {
+        showModal();
+      };
 
       return (
         <div className="next sc-form-button sc-md">
