@@ -6,7 +6,7 @@ const INITIAL_STATE = {};
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD_USER:
-      return { ...state, [action.payload.id]: action.payload };
+      return { ...state, [action.payload.email]: action.payload };
     case REMOVE_USER:
       return _.omit(state, action.payload);
     case CLEAR_USERS:

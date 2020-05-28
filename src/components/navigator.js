@@ -3,7 +3,16 @@ import React from "react";
 import "./navigator.scss";
 
 const Navigator = (props) => {
-  const { form, step, reset, nextStep, addToCurrent } = props;
+  const {
+    form,
+    step,
+    current,
+    reset,
+    nextStep,
+    addToCurrent,
+    clearCurrent,
+    addUser,
+  } = props;
 
   const renderNext = () => {
     if (step === 1) {
@@ -30,9 +39,17 @@ const Navigator = (props) => {
         </div>
       );
     } else if (step === 2) {
+      const onClick = () => {
+        nextStep();
+
+        addUser(current);
+
+        clearCurrent();
+      };
+
       return (
         <div className="next sc-form-button sc-md">
-          <button type="button" onClick={nextStep}>
+          <button type="button" onClick={() => onClick()}>
             <i className="sc-icon-right"></i>
 
             <span>Next</span>

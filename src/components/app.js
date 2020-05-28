@@ -7,7 +7,8 @@ import { reset } from "redux-form";
 import "./app.scss";
 import { fetchData } from "../actions/data";
 import { nextStep } from "../actions/steps";
-import { addToCurrent, addToWorkshops } from "../actions/current";
+import { addToCurrent, addToWorkshops, clearCurrent } from "../actions/current";
+import { addUser, removeUser, clearUsers } from "../actions/users";
 import Header from "./header";
 import Form from "./form";
 import Workshops from "./workshops";
@@ -30,7 +31,11 @@ class App extends Component {
       nextStep,
       addToCurrent,
       addToWorkshops,
+      clearCurrent,
       reset,
+      addUser,
+      removeUser,
+      clearUsers,
     } = this.props;
 
     if (!Object.keys(data).length) {
@@ -55,9 +60,12 @@ class App extends Component {
         <Navigator
           form={form}
           step={step}
+          current={current}
           reset={reset}
           nextStep={nextStep}
           addToCurrent={addToCurrent}
+          addUser={addUser}
+          clearCurrent={clearCurrent}
         />
       </div>
     );
@@ -79,6 +87,10 @@ const mapDispatchToProps = (dispatch) =>
       nextStep,
       addToCurrent,
       addToWorkshops,
+      clearCurrent,
+      addUser,
+      removeUser,
+      clearUsers,
     },
     dispatch
   );
