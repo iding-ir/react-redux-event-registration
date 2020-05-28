@@ -7,9 +7,13 @@ import User from "./user";
 const Summary = (props) => {
   const { data, step, users } = props;
 
+  const { registration_types, event_currency } = data;
+
   const classes = classnames("summary", {
     show: step === 3,
   });
+
+  let total = 0;
 
   return (
     <div className={classes}>
@@ -17,6 +21,18 @@ const Summary = (props) => {
         <h5>Registration Summary</h5>
 
         {Object.values(users).map((user, index) => {
+          const { type, workshops: currentWorkshops } = user;
+
+          const registrationAmount = Object.values(registration_types).filter(
+            (value) => value.event_registration_type_id === parseInt(type)
+          )[0].event_registration_type_price;
+
+          const workshopsAmount = currentWorkshops.reduce((total, item) => {
+            return total + item.event_workshop_price;
+          }, 0);
+
+          total += registrationAmount + workshopsAmount;
+
           return <User key={index} data={data} current={user} />;
         })}
       </div>
@@ -32,7 +48,9 @@ const Summary = (props) => {
               </button>
             </div>
 
-            <div className="total"></div>
+            <div className="total">
+              {total} {event_currency}
+            </div>
           </div>
         </form>
       </div>
