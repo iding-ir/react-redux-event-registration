@@ -58,11 +58,13 @@ const Navigator = (props) => {
         </div>
       );
     } else if (step === 3) {
+      const disabled = !form.payment || form.payment.syncErrors;
+
       const onClick = () => {};
 
       return (
         <div className="next sc-form-button sc-md">
-          <button type="button" onClick={() => onClick()}>
+          <button type="button" onClick={() => onClick()} disabled={disabled}>
             <i className="sc-icon-right"></i>
 
             <span>Next</span>
