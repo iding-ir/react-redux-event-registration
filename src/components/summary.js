@@ -2,9 +2,10 @@ import React from "react";
 import * as classnames from "classnames";
 
 import "./summary.scss";
+import User from "./user";
 
 const Summary = (props) => {
-  const { data, step, current } = props;
+  const { data, step, users } = props;
 
   const classes = classnames("summary", {
     show: step === 3,
@@ -15,7 +16,9 @@ const Summary = (props) => {
       <div className="cheque">
         <h5>Registration Summary</h5>
 
-        <div className="list"></div>
+        {Object.values(users).map((user, index) => {
+          return <User key={index} data={data} current={user} />;
+        })}
       </div>
 
       <div className="controls">
@@ -40,9 +43,9 @@ const Summary = (props) => {
         <form className="sc-form">
           <div className="sc-form-group sc-grid-2">
             <div className="sc-form-radio">
-              <input type="radio" name="my-radio" id="now" checked />
+              <input type="radio" name="my-radio" id="now" />
 
-              <label for="now">
+              <label htmlFor="now">
                 <i className="sc-icon-radio"></i>
 
                 <span>Pay Now</span>
@@ -52,7 +55,7 @@ const Summary = (props) => {
             <div className="sc-form-radio">
               <input type="radio" name="my-radio" id="later" />
 
-              <label for="later">
+              <label htmlFor="later">
                 <i className="sc-icon-radio"></i>
 
                 <span>Book Now, Pay Later</span>

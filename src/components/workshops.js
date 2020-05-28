@@ -21,7 +21,9 @@ const Workshop = (props) => {
 
   return (
     <div className={classes}>
-      <User data={data} current={current} />
+      <div className="current">
+        <User data={data} current={current} />
+      </div>
 
       <div className="list">
         <h5>Workshops</h5>

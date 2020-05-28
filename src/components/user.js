@@ -20,7 +20,7 @@ const User = (props) => {
   const amount = registrationAmount + workshopsAmount;
 
   return (
-    <div className="current">
+    <div className="user">
       <div className="registration">
         <div>Registration details for</div>
 

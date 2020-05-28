@@ -8,30 +8,7 @@
   }
 
   .current {
-    display: flex;
-    flex-direction: row;
-    padding: var(--padding-md);
     margin: var(--padding-md);
-    border: var(--border-thickness) solid var(--fade-dark-sm);
-    border-radius: var(--border-radius);
-
-    .registration {
-      text-align: left;
-      flex-grow: 10;
-
-      .description {
-        font-weight: bold;
-      }
-    }
-
-    .amount {
-      text-align: right;
-      flex-grow: 10;
-
-      .description {
-        color: red;
-      }
-    }
   }
 
   .list {

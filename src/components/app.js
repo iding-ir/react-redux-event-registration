@@ -28,6 +28,7 @@ class App extends Component {
       form,
       step,
       current,
+      users,
       nextStep,
       addToCurrent,
       addToWorkshops,
@@ -55,7 +56,7 @@ class App extends Component {
           addToWorkshops={addToWorkshops}
         />
 
-        <Summary step={step} data={data} current={current} />
+        <Summary step={step} data={data} users={users} />
 
         <Navigator
           form={form}
@@ -77,6 +78,7 @@ const mapStateToProps = (state) => ({
   form: state.form,
   step: state.step,
   current: state.current,
+  users: state.users,
 });
 
 const mapDispatchToProps = (dispatch) =>
