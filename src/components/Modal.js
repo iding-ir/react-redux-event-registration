@@ -20,7 +20,7 @@ const Modal = (props) => {
       <div className={modalClasses}>
         <div className="sc-card">
           <header className="sc-card-header">
-            <h3>Lorem ipsum</h3>
+            <h3>Result</h3>
           </header>
 
           <div className="sc-card-body">

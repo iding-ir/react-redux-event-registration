@@ -48,7 +48,12 @@ class Form extends Component {
           </div>
 
           <div className="field sc-col-xs-12">
-            <Field name="email" label="Email" component={Textfield} />
+            <Field
+              name="email"
+              type="email"
+              label="Email"
+              component={Textfield}
+            />
           </div>
         </form>
       </div>
