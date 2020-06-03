@@ -1,8 +1,8 @@
 import React from "react";
 import * as classnames from "classnames";
 
-import "./workshops.scss";
-import User from "./user";
+import "./Workshops.scss";
+import User from "./User";
 
 const Workshop = (props) => {
   const { data, step, current, addToWorkshops, removeUser } = props;

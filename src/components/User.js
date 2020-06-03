@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./user.scss";
+import "./User.scss";
 
 const User = (props) => {
   const { data, current, removeUser, remove } = props;

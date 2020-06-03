@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./navigator.scss";
+import "./Navigator.scss";
 
 const Navigator = (props) => {
   const {

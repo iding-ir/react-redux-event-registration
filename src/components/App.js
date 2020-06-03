@@ -4,18 +4,18 @@ import { bindActionCreators } from "redux";
 import "stylecraft/dist/stylecraft.css";
 import { reset } from "redux-form";
 
-import "./app.scss";
+import "./App.scss";
 import { fetchData } from "../actions/data";
 import { setStep } from "../actions/steps";
 import { addToCurrent, addToWorkshops, clearCurrent } from "../actions/current";
 import { addUser, removeUser, clearUsers } from "../actions/users";
 import { showModal, hideModal } from "../actions/modal";
-import Header from "./header";
-import Form from "./form";
-import Workshops from "./workshops";
-import Summary from "./summary";
-import Navigator from "./navigator";
-import Modal from "./modal";
+import Header from "./Header";
+import Form from "./Form";
+import Workshops from "./Workshops";
+import Summary from "./Summary";
+import Navigator from "./Navigator";
+import Modal from "./Modal";
 
 class App extends Component {
   componentDidMount() {

@@ -3,8 +3,8 @@ import { Field, reduxForm } from "redux-form";
 import { renderRadio } from "stylecraft-redux-form";
 import * as classnames from "classnames";
 
-import "./summary.scss";
-import User from "./user";
+import "./Summary.scss";
+import User from "./User";
 
 class Summary extends Component {
   render() {

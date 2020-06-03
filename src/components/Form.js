@@ -3,7 +3,7 @@ import { Field, reduxForm } from "redux-form";
 import { renderTextfield, renderSelect } from "stylecraft-redux-form";
 import * as classnames from "classnames";
 
-import "./form.scss";
+import "./Form.scss";
 
 class Form extends Component {
   render() {

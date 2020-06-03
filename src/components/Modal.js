@@ -1,7 +1,7 @@
 import React from "react";
 import * as classnames from "classnames";
 
-import "./modal.scss";
+import "./Modal.scss";
 import printToConsole from "../utils/printToConsole";
 
 const Modal = (props) => {

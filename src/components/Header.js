@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-import "./header.scss";
+import "./Header.scss";
 
 const Header = (props) => {
   if (!Object.keys(props.data).length) {
