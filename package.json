@@ -1,5 +1,5 @@
 {
-  "name": "event-registration",
+  "name": "react-redux-event-registration",
   "version": "1.0.2",
   "description": "Demo React and Redux mini-app",
   "keywords": [
@@ -15,10 +15,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iding-ir/event-registration.git"
+    "url": "git+https://github.com/iding-ir/react-redux-event-registration.git"
   },
   "bugs": {
-    "url": "https://github.com/iding-ir/event-registration/issues"
+    "url": "https://github.com/iding-ir/react-redux-event-registration/issues"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

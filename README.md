@@ -9,4 +9,4 @@ This project was created using React, Redux, [Stylecraft](https://github.com/idi
 
 ## Demo
 
-[Live demo](http://event-registration.iding.ir)
+[Live demo](http://react-redux-event-registration.iding.ir)
