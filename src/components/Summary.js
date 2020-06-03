@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
-import { renderRadio } from "stylecraft-redux-form";
+import { Radio } from "stylecraft-redux-form";
 import * as classnames from "classnames";
 
 import "./Summary.scss";
@@ -81,7 +81,7 @@ class Summary extends Component {
                   { id: "now", label: "Pay Now", value: "now" },
                   { id: "later", label: "Book Now, Pay Later", value: "later" },
                 ]}
-                component={renderRadio}
+                component={Radio}
               />
             </div>
           </form>

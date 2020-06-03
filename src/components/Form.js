@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
-import { renderTextfield, renderSelect } from "stylecraft-redux-form";
+import { Textfield, Select } from "stylecraft-redux-form";
 import * as classnames from "classnames";
 
 import "./Form.scss";
@@ -35,28 +35,20 @@ class Form extends Component {
             <h5>Registration Types &amp; Fees:</h5>
 
             <div className="sc-form-group sc-grid-1">
-              <Field name="type" items={items} component={renderSelect} />
+              <Field name="type" items={items} component={Select} />
             </div>
           </div>
 
           <div className="field sc-col-xs-12 sc-col-sm-6">
-            <Field
-              name="firstName"
-              label="First name"
-              component={renderTextfield}
-            />
+            <Field name="firstName" label="First name" component={Textfield} />
           </div>
 
           <div className="field sc-col-xs-12 sc-col-sm-6">
-            <Field
-              name="lastName"
-              label="Last name"
-              component={renderTextfield}
-            />
+            <Field name="lastName" label="Last name" component={Textfield} />
           </div>
 
           <div className="field sc-col-xs-12">
-            <Field name="email" label="Email" component={renderTextfield} />
+            <Field name="email" label="Email" component={Textfield} />
           </div>
         </form>
       </div>

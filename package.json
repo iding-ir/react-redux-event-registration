@@ -37,8 +37,8 @@
     "redux": "^4.0.5",
     "redux-form": "^8.3.5",
     "redux-thunk": "^2.3.0",
-    "stylecraft": "^0.11.4",
-    "stylecraft-redux-form": "^1.1.2"
+    "stylecraft": "^1.0.0",
+    "stylecraft-redux-form": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
